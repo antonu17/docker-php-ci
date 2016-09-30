@@ -1,6 +1,8 @@
 FROM php:7.0-cli
 
 RUN apt-get update && apt-get install -y \
+		git \
+		vim \
         libfreetype6-dev \
         libjpeg62-turbo-dev \
         libmcrypt-dev \
