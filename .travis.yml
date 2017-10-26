@@ -5,7 +5,7 @@ env:
   - VERSION=7.0 VARIANT=cli
 
 install:
-  - git clone https://github.com/hellofresh/docker-php-ci.git ~/docker-php-ci
+  - git clone https://github.com/antonu17/docker-php-ci.git ~/docker-php-ci
 
 before_script:
   - env | sort
@@ -18,6 +18,6 @@ script:
 after_script:
   - docker images
   - docker login --username="$QUAY_USER" --password="$QUAY_PASS" quay.io
-  - docker push quay.io/hellofresh/$image
+  - docker push quay.io/antonu17/$image
 
 # vim:set et ts=2 sw=2:
