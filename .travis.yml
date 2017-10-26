@@ -9,7 +9,7 @@ install:
 
 before_script:
   - env | sort
-  - cd "$VERSION/$VARIANT"
+  - cd ~/docker-php-ci/$VERSION/$VARIANT
   - image="docker-php-ci:${VERSION}-${VARIANT}"
 
 script:
@@ -17,7 +17,7 @@ script:
 
 after_script:
   - docker images
-  - docker login --username "$QUAY_USER" --password "$QUAY_PASS"
+  - docker login --username="$QUAY_USER" --password="$QUAY_PASS" quay.io
   - docker push quay.io/hellofresh/$image
 
 # vim:set et ts=2 sw=2:
